@@ -1,19 +1,18 @@
-import React from "react";
-import * as gambar from "../assets/images";
+import {arrowForwardOutline, footerBg, logoFacebook, logoFooter, logoInstagram, logoLinkedin, logoTwitter, logoYoutube} from "../assets/images";
 
 export default function Footer() {
   return (
     <>
       <footer
         className="footer"
-        style={{ backgroundImage: `url(${gambar.footerBg})` }}
+        style={{ backgroundImage: `url(${footerBg})` }}
       >
         <div className="footer-top section">
           <div className="container grid-list">
             <div className="footer-brand">
               <a href="#" className="logo">
                 <img
-                  src={gambar.logoFooter}
+                  src={logoFooter}
                   width="162"
                   height="50"
                   alt="UTC logo"
@@ -121,41 +120,38 @@ export default function Footer() {
                 <button type="submit" className="btn has-before">
                   <span className="span">Kirim</span>
 
-                  <ion-icon
-                    name="arrow-forward-outline"
-                    aria-hidden="true"
-                  ></ion-icon>
+                <div className="ion-icon" style={{maskImage: `url(${arrowForwardOutline})` }} aria-hidden="true"></div>
                 </button>
               </form>
 
               <ul className="social-list">
                 <li>
                   <a href="#" className="social-link">
-                    <ion-icon name="logo-facebook"></ion-icon>
+                <div className="ion-icon" style={{maskImage: `url(${logoFacebook})` }}></div>
                   </a>
                 </li>
 
                 <li>
                   <a href="#" className="social-link">
-                    <ion-icon name="logo-linkedin"></ion-icon>
+                <div className="ion-icon" style={{maskImage: `url(${logoLinkedin})` }}></div>
                   </a>
                 </li>
 
                 <li>
                   <a href="#" className="social-link">
-                    <ion-icon name="logo-instagram"></ion-icon>
+                <div className="ion-icon" style={{maskImage: `url(${logoInstagram})` }}></div>
                   </a>
                 </li>
 
                 <li>
                   <a href="#" className="social-link">
-                    <ion-icon name="logo-twitter"></ion-icon>
+                <div className="ion-icon" style={{maskImage: `url(${logoTwitter})` }}></div>
                   </a>
                 </li>
 
                 <li>
                   <a href="#" className="social-link">
-                    <ion-icon name="logo-youtube"></ion-icon>
+                <div className="ion-icon" style={{maskImage: `url(${logoYoutube})` }}></div>
                   </a>
                 </li>
               </ul>

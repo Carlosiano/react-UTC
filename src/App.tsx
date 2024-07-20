@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Header, Main, Footer } from "./components";
+import {chevronUp} from './assets/images'
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
@@ -29,7 +30,7 @@ function App() {
         aria-label="back top top"
         data-back-top-btn
       >
-        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+       <div className="ion-icon" style={{maskImage: `url(${chevronUp})` }} aria-hidden="true"></div>
       </a>
     </>
   );

@@ -1,5 +1,6 @@
 import {useState} from "react";
-import * as gambar from "../assets/images";
+import {logoNav, closeOutline, personAddOutline, arrowForwardOutline, menuOutline} from "../assets/images";
+import { navLinks } from "../assets/js/data";
 
 export default function Header({ scrollY: number }) {
   const [isActive, setActive] = useState(false);
@@ -9,14 +10,14 @@ export default function Header({ scrollY: number }) {
       <header className={`header ${scrollY > 100 && "active"}`} data-header>
         <div className="container">
           <a href="#" className="logo">
-            <img src={gambar.logoNav} alt="UTC logo" />
+            <img src={logoNav} alt="UTC logo" />
           </a>
 
           <nav className={`navbar ${isActive ? "active" : ''}`} data-navbar>
             <div className="wrapper">
               <a href="#" className="logo">
                 <img
-                  src={gambar.logoNav}
+                  src={logoNav}
                   width="162"
                   height="50"
                   alt="UTC logo"
@@ -29,52 +30,28 @@ export default function Header({ scrollY: number }) {
                 data-nav-toggler
                 onClick={() => setActive(!isActive)}
               >
-                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                <div className="ion-icon" style={{maskImage: `url(${closeOutline})` }} aria-hidden="true"></div>
               </button>
             </div>
             <ul className="navbar-list">
-              <li className="navbar-item">
-                <a href="#home" className="navbar-link" data-nav-link>
-                  Beranda
+              {navLinks.map((item, index) => (
+              <li className="navbar-item" key={index} onClick={ ()=> setActive(!isActive)}>
+                <a href={`#${item.href}`} className="navbar-link" data-nav-link>
+                  {item.title}
                 </a>
               </li>
-
-              <li className="navbar-item">
-                <a href="#jenjang" className="navbar-link" data-nav-link>
-                  Jenjang
-                </a>
-              </li>
-
-              <li className="navbar-item">
-                <a href="#why" className="navbar-link" data-nav-link>
-                  Mengapa UTC
-                </a>
-              </li>
-
-              <li className="navbar-item">
-                <a href="#fasilitas" className="navbar-link" data-nav-link>
-                  Fasilitas
-                </a>
-              </li>
-
-              <li className="navbar-item">
-                <a href="#info" className="navbar-link" data-nav-link>
-                  Info
-                </a>
-              </li>
+              ))}
             </ul>
           </nav>
 
           <div className="header-actions">
             <a href="#" className="btn has-before">
-              <ion-icon name="person-add-outline" aria-hidden="true"></ion-icon>
+                <div className="ion-icon" style={{maskImage: `url(${personAddOutline})` }} aria-hidden="true"></div>
               <span className="span">Daftar</span>
             </a>
             <a href="#" className="btn-second has-before">
-              <ion-icon
-                name="arrow-forward-outline"
-                aria-hidden="true"
-              ></ion-icon>
+
+                <div className="ion-icon" style={{maskImage: `url(${arrowForwardOutline})` }} aria-hidden="true"></div>
               <span className="span">Masuk</span>
             </a>
 
@@ -84,7 +61,8 @@ export default function Header({ scrollY: number }) {
               data-nav-toggler
               onClick={() => setActive(!isActive)}
             >
-              <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+
+                <div className="ion-icon" style={{maskImage: `url(${menuOutline})` }} aria-hidden="true"></div>
             </button>
           </div>
 

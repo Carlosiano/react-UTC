@@ -1,6 +1,25 @@
-import React, { CSSProperties } from "react";
-import * as gambar from "../assets/images";
-import * as datas from "../assets/js/data";
+import { CSSProperties } from "react";
+import {
+  heroBg,
+  heroBanner1,
+  heroBanner2,
+  heroShape2,
+  aboutBanner,
+  aboutShape1,
+  aboutShape2,
+  aboutShape3,
+  aboutShape4,
+  videoBg,
+  videoBanner,
+  videoShape1,
+  videoShape2,
+  blogBg,
+  blogShape,
+  arrowForwardOutline,
+  checkmarkDoneOutline,
+  play,
+} from "../assets/images";
+import { alasanKuliah, categories, fasilitas, infoPMB, kampus } from "../assets/js/data";
 
 export default function Main() {
   return (
@@ -13,7 +32,7 @@ export default function Main() {
             className="section hero has-bg-image"
             id="home"
             aria-label="home"
-            style={{ backgroundImage: `url(${gambar.heroBg})` }}
+            style={{ backgroundImage: `url(${heroBg})` }}
           >
             <div className="container">
               <div className="hero-content">
@@ -35,10 +54,11 @@ export default function Main() {
                   <a href="#" className="btn-second has-before">
                     <span className="span">Panduan PMB</span>
 
-                    <ion-icon
-                      name="arrow-forward-outline"
+                    <div
+                      className="ion-icon"
+                      style={{ maskImage: `url(${arrowForwardOutline})` }}
                       aria-hidden="true"
-                    ></ion-icon>
+                    ></div>
                   </a>
                 </div>
               </div>
@@ -49,7 +69,7 @@ export default function Main() {
                   style={{ "--width": 270, "--height": 300 } as CSSProperties}
                 >
                   <img
-                    src={gambar.heroBanner1}
+                    src={heroBanner1}
                     width="270"
                     height="300"
                     alt="hero banner"
@@ -62,7 +82,7 @@ export default function Main() {
                   style={{ "--width": 240, "--height": 370 } as CSSProperties}
                 >
                   <img
-                    src={gambar.heroBanner2}
+                    src={heroBanner2}
                     width="240"
                     height="370"
                     alt="hero banner"
@@ -71,7 +91,7 @@ export default function Main() {
                 </div>
 
                 <img
-                  src={gambar.heroShape2}
+                  src={heroShape2}
                   width="622"
                   height="551"
                   alt=""
@@ -98,7 +118,7 @@ export default function Main() {
               <p className="section-text">Program Sarjana (S1)</p>
 
               <ul className="grid-list">
-                {datas.categories[0].map((item, index) => (
+                {categories[0].map((item, index) => (
                   <li key={index}>
                     <div
                       className="category-card"
@@ -134,7 +154,7 @@ export default function Main() {
               <p className="section-text">Program Diploma (D3)</p>
 
               <ul className="grid-list">
-                {datas.categories[0].map((item, index) => (
+                {categories[0].map((item, index) => (
                   <li key={index}>
                     <div
                       className="category-card"
@@ -179,7 +199,7 @@ export default function Main() {
                   style={{ "--width": 520, "--height": 370 } as CSSProperties}
                 >
                   <img
-                    src={gambar.aboutBanner}
+                    src={aboutBanner}
                     width="520"
                     height="370"
                     loading="lazy"
@@ -189,7 +209,7 @@ export default function Main() {
                 </div>
 
                 <img
-                  src={gambar.aboutShape1}
+                  src={aboutShape1}
                   width="360"
                   height="420"
                   loading="lazy"
@@ -198,7 +218,7 @@ export default function Main() {
                 />
 
                 <img
-                  src={gambar.aboutShape2}
+                  src={aboutShape2}
                   width="371"
                   height="220"
                   loading="lazy"
@@ -207,7 +227,7 @@ export default function Main() {
                 />
 
                 <img
-                  src={gambar.aboutShape3}
+                  src={aboutShape3}
                   width="722"
                   height="528"
                   loading="lazy"
@@ -226,96 +246,22 @@ export default function Main() {
                 <p className="section-text"></p>
 
                 <ul className="about-list">
-                  <li className="about-item">
-                    <ion-icon
-                      name="checkmark-done-outline"
+                  {alasanKuliah.map( (item, index)=> (
+                  <li className="about-item" key={index}>
+                    <div
+                      className="ion-icon"
+                      style={{ maskImage: `url(${checkmarkDoneOutline})` }}
                       aria-hidden="true"
-                    ></ion-icon>
-
+                    ></div>
                     <span className="span">
-                      Peluang magang dan bekerja di Silicon Valley dan Hollywood
+                      {item}
                     </span>
                   </li>
-
-                  <li className="about-item">
-                    <ion-icon
-                      name="checkmark-done-outline"
-                      aria-hidden="true"
-                    ></ion-icon>
-
-                    <span className="span">
-                      Perguruan Tingggi Terbaik di Indonesia pada Industrial
-                      Application (WURI, 2023).
-                    </span>
-                  </li>
-
-                  <li className="about-item">
-                    <ion-icon
-                      name="checkmark-done-outline"
-                      aria-hidden="true"
-                    ></ion-icon>
-
-                    <span className="span">
-                      Model Perguruan Tinggi Private Entrepreneur Dunia oleh
-                      UNESCO
-                    </span>
-                  </li>
-                  <li className="about-item">
-                    <ion-icon
-                      name="checkmark-done-outline"
-                      aria-hidden="true"
-                    ></ion-icon>
-
-                    <span className="span">
-                      Alumni mudah mendapat pekerjaan (Employbility bintang 5
-                      dari QS Stars 2019)
-                    </span>
-                  </li>
-                  <li className="about-item">
-                    <ion-icon
-                      name="checkmark-done-outline"
-                      aria-hidden="true"
-                    ></ion-icon>
-
-                    <span className="span">
-                      Ditargetkan 30 % mahasiswa menjadi entrepreneur.
-                    </span>
-                  </li>
-                  <li className="about-item">
-                    <ion-icon
-                      name="checkmark-done-outline"
-                      aria-hidden="true"
-                    ></ion-icon>
-
-                    <span className="span">
-                      Menghasilkan produk berkualitas dunia dalam bidang film
-                      animasi, game dan ICT
-                    </span>
-                  </li>
-                  <li className="about-item">
-                    <ion-icon
-                      name="checkmark-done-outline"
-                      aria-hidden="true"
-                    ></ion-icon>
-
-                    <span className="span">
-                      Memperoleh lebih dari 80 penghargaan internasional
-                    </span>
-                  </li>
-                  <li className="about-item">
-                    <ion-icon
-                      name="checkmark-done-outline"
-                      aria-hidden="true"
-                    ></ion-icon>
-
-                    <span className="span">
-                      Memiliki sertifikasi ISO 9001 Quality Managemen
-                    </span>
-                  </li>
+                  ) )}
                 </ul>
 
                 <img
-                  src={gambar.aboutShape4}
+                  src={aboutShape4}
                   width="100"
                   height="100"
                   loading="lazy"
@@ -341,7 +287,7 @@ export default function Main() {
               </h2>
 
               <ul className="grid-list">
-                {datas.fasilitas.map((item, index) => (
+                {fasilitas.map((item, index) => (
                   <li key={index}>
                     <div className="course-card">
                       <figure
@@ -375,10 +321,12 @@ export default function Main() {
 
               <a href="#" className="btn has-before">
                 <span className="span">Lihat lebih banyak</span>
-                <ion-icon
-                  name="arrow-forward-outline"
+
+                <div
+                  className="ion-icon"
+                  style={{ maskImage: `url(${arrowForwardOutline})` }}
                   aria-hidden="true"
-                ></ion-icon>
+                ></div>
               </a>
             </div>
           </section>
@@ -390,15 +338,16 @@ export default function Main() {
               <p className="section-subtitle">Info PMB</p>
               <h2 className="h2 section-title">Informasi seputar PMB</h2>
               <ul className="grid-list">
-                {datas.infoPMB.map((item, index) => (
+                {infoPMB.map((item, index) => (
                   <li style={{ paddingTop: "100px" }} key={index}>
                     <div className="blog-card">
                       <div className="card-content">
                         <a href="#" className="card-btn" aria-label="read more">
-                          <ion-icon
-                            name="arrow-forward-outline"
+                          <div
+                            className="ion-icon"
+                            style={{ maskImage: `url(${arrowForwardOutline})` }}
                             aria-hidden="true"
-                          ></ion-icon>
+                          ></div>
                         </a>
                         <h3 className="h3">
                           <a href="#" className="card-title">
@@ -411,10 +360,11 @@ export default function Main() {
                 ))}
               </ul>
               <a href="#" className="btn-second has-before">
-                <ion-icon
-                  name="arrow-forward-outline"
+                <div
+                  className="ion-icon"
+                  style={{ maskImage: `url(${arrowForwardOutline})` }}
                   aria-hidden="true"
-                ></ion-icon>
+                ></div>
               </a>
             </div>
           </section>
@@ -424,7 +374,7 @@ export default function Main() {
           <section
             className="video has-bg-image"
             aria-label="video"
-            style={{ backgroundImage: `url(${gambar.videoBg})` }}
+            style={{ backgroundImage: `url(${videoBg})` }}
           >
             <div className="container">
               <div className="video-card">
@@ -433,7 +383,7 @@ export default function Main() {
                   style={{ "--width": " ", "--height": " " } as CSSProperties}
                 >
                   <img
-                    src={gambar.videoBanner}
+                    src={videoBanner}
                     width="970"
                     height="550"
                     loading="lazy"
@@ -442,12 +392,16 @@ export default function Main() {
                   />
 
                   <button className="play-btn" aria-label="play video">
-                    <ion-icon name="play" aria-hidden="true"></ion-icon>
+                    <div
+                      className="ion-icon"
+                      style={{ maskImage: `url(${play})` }}
+                      aria-hidden="true"
+                    ></div>
                   </button>
                 </div>
 
                 <img
-                  src={gambar.videoShape1}
+                  src={videoShape1}
                   width="1089"
                   height="605"
                   loading="lazy"
@@ -456,7 +410,7 @@ export default function Main() {
                 />
 
                 <img
-                  src={gambar.videoShape2}
+                  src={videoShape2}
                   width="158"
                   height="174"
                   loading="lazy"
@@ -473,7 +427,7 @@ export default function Main() {
             className="section blog has-bg-image"
             id="blog"
             aria-label="blog"
-            style={{ backgroundImage: `url(${gambar.blogBg})` }}
+            style={{ backgroundImage: `url(${blogBg})` }}
           >
             <div className="container">
               <p className="section-subtitle">Kampus</p>
@@ -481,7 +435,7 @@ export default function Main() {
               <h2 className="h2 section-title">Cabang Kampus</h2>
 
               <ul className="grid-list">
-                {datas.kampus.map((item, index) => (
+                {kampus.map((item, index) => (
                   <li key={index}>
                     <div className="blog-card">
                       <figure
@@ -502,10 +456,11 @@ export default function Main() {
 
                       <div className="card-content">
                         <a href="#" className="card-btn" aria-label="read more">
-                          <ion-icon
-                            name="arrow-forward-outline"
+                          <div
+                            className="ion-icon"
+                            style={{ maskImage: `url(${arrowForwardOutline})` }}
                             aria-hidden="true"
-                          ></ion-icon>
+                          ></div>
                         </a>
 
                         <a href="#" className="card-subtitle">
@@ -525,7 +480,7 @@ export default function Main() {
               </ul>
 
               <img
-                src={gambar.blogShape}
+                src={blogShape}
                 width="186"
                 height="186"
                 loading="lazy"
